@@ -4,6 +4,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using Project.Automation.PageObjects.MyAccount;
+using CATS.Framework.Configuration;
 
 namespace Project.Automation.PageObjects.Register
 {
@@ -42,7 +43,7 @@ namespace Project.Automation.PageObjects.Register
         /// <param name="customerLastName"></param>
         /// <param name="customerPassword"></param>
         /// <exception cref="NotImplementedException"></exception>
-        internal void PopulateCustomerFields(string customerFirstName, string customerLastName, string customerPassword)
+        internal void PopulateCustomerFields(string customerFirstName, string customerLastName)
         {
             int TimeOutValue = 10;
 
@@ -50,7 +51,7 @@ namespace Project.Automation.PageObjects.Register
             {
                 AddTextByLocator(StoreRegisterPageConst.CustomerFirstNameTextField, TimeOutValue, customerFirstName);
                 AddTextByLocator(StoreRegisterPageConst.CustomerLastNameTextField, TimeOutValue, customerLastName);
-                AddTextByLocator(StoreRegisterPageConst.PasswordTextField, TimeOutValue, customerPassword);
+                AddTextByLocator(StoreRegisterPageConst.PasswordTextField, TimeOutValue, EnvironmentConfiguration.GetValue(customerFirstName));
             }
             catch (Exception ex)
             {

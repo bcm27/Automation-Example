@@ -105,8 +105,8 @@ namespace Project.Automation.TestClasses
 
                     CreateAccountPage.PopulateCustomerFields(
                         UserFirstName,
-                        UserLastName,
-                        Data.GetString("customerPassword"));
+                        UserLastName
+                        /**The password is pulled from the user name via the config file**/);
 
 
                     CreateAccountPage.PopulateUserFields(
@@ -220,8 +220,7 @@ namespace Project.Automation.TestClasses
 
                 CreateAccountPage.PopulateCustomerFields(
                     UserFirstName,
-                    UserLastName,
-                    Data.GetString("customerPassword"));
+                    UserLastName);
 
 
                 CreateAccountPage.PopulateUserFields(
