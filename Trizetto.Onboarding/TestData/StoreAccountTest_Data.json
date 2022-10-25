@@ -1,0 +1,37 @@
+{
+  "CreateAccountTest": {
+    "TestData": {
+      "testEmail1": "email@testingtest.com",
+      "customerFirstName": "Bob",
+      "customerLastName": "TheBuilder",
+      "customerPassword": "password1234",
+      "userFirstName": "Bob",
+      "userLastName": "TheBuilder",
+      "userAddressLine1": "123 Somewhere Street",
+      "userCity": "SomewhereTown",
+      "userZipCode": "61111",
+      "userState": "Minnesota",
+      "userMobilePhone": "111-222-3333"
+    }
+  },
+  "AccessCreateAccountPageTest": {
+    "TestData": {
+      "testEmail": "bobthebuilder258@gmail.com"
+    }
+  },
+  "CreateAccountAndAddEveningDressToCartTest": {
+    "TestData": {
+      "testEmail1": "email2@testingtest.com",
+      "customerFirstName": "Bob",
+      "customerLastName": "TheBuilder",
+      "customerPassword": "password1234",
+      "userFirstName": "Bob",
+      "userLastName": "TheBuilder",
+      "userAddressLine1": "123 Somewhere Street",
+      "userCity": "SomewhereTown",
+      "userZipCode": "61112",
+      "userState": "Minnesota",
+      "userMobilePhone": "111-222-3434"
+    }
+  },
+}
