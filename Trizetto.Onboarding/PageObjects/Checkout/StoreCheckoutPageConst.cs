@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Trizetto.Onboarding.PageObjects.Checkout
+namespace Project.Automation.PageObjects.Checkout
 {
     internal static class StoreCheckoutPageConst
     {

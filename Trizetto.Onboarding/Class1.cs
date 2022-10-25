@@ -1,4 +1,4 @@
-﻿namespace Trizetto.Onboarding
+﻿namespace Project.Automation
 {
     public class Class1
     {

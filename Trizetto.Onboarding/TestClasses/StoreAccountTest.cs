@@ -7,19 +7,16 @@ using CATS.Framework.Logging;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using Trizetto.Onboarding.PageObjects.Home;
+using Project.Automation.PageObjects.Home;
 
-namespace Trizetto.Onboarding.TestClasses
+namespace Project.Automation.TestClasses
 {
     internal class StoreAccountTest : TestHelper
     {
         private static CATSLogger _log = new CATSLogger();
-        private IWebDriver driver;
-        private CATSElementActions elementActions;
 
         /// <summary>
-        /// Can we even just access the home page? Is the website available. Test that.
-        /// This is the first test we will always run
+        /// Can we even just access the home page? Test that.
         /// </summary>
         [Test, Smoke, Property("TestId", "10001")]
         public void AccessHomePageTest()
@@ -27,7 +24,7 @@ namespace Trizetto.Onboarding.TestClasses
             ExecuteTestActionsWithWebdriver((driver) =>
             {
                 var url = EnvironmentConfiguration.GetValue("URL");
-                var HomePage = new StoreHomePage(driver, url);
+                new StoreHomePage(driver, url);
 
                 // test that the title of the web pages in the tab header is the same
                 Assert.AreEqual("My Store", driver.Title,
@@ -36,7 +33,7 @@ namespace Trizetto.Onboarding.TestClasses
         }
 
         /// <summary>
-        /// Next can we access the login page, this is the second web-page we will visit.
+        /// Next can we access the login page
         /// </summary>
         [Test, Smoke, Property("TestId", "10002")]
         public void AccessLoginPageTest()
@@ -80,16 +77,6 @@ namespace Trizetto.Onboarding.TestClasses
         }
 
         /// <summary>
-        /// Adds some random 5 character so the beginning of the email to avoid duplication errors during testing
-        /// </summary>
-        /// <param name="v"></param>
-        /// <returns></returns>
-        private string AddRandomTextToEmail(string v)
-        {
-            return DataRandomizer.CreateString(CATS.Framework.Helpers.Type.AlphaUpper, 5) + v;
-        }
-
-        /// <summary>
         /// Tests that an account can be successfully created with test JSON data
         /// </summary>
         [Test, Smoke, Property("TestId", "10004")]
@@ -111,42 +98,31 @@ namespace Trizetto.Onboarding.TestClasses
                     RegisterEmailPage.EnterEmail(Email);
                     var CreateAccountPage = RegisterEmailPage.ClickRegisterButton();
 
-                    // Now we need to populate all the account fields
-                    // The minimum required is these:
-
-                    var CustomerFirstName = Data.GetString("customerFirstName");
-                    var CustomerLastName = Data.GetString("customerLastName");
-                    var CustomerPassword = Data.GetString("customerPassword");
-
-                    CreateAccountPage.PopulateCustomerFields(
-                        CustomerFirstName,
-                        CustomerLastName,
-                        CustomerPassword);
+                    // Populate all the account fields
 
                     var UserFirstName = Data.GetString("userFirstName");
                     var UserLastName = Data.GetString("userLastName");
-                    var UserAddressLine1 = Data.GetString("userAddressLine1");
-                    var UserCity = Data.GetString("userCity");
 
-                    var UserState = Data.GetString("userState");
-
-                    var UserZipCode = Data.GetString("userZipCode");
-                    var UserMobilePhone = Data.GetString("userMobilePhone");
-
-                    CreateAccountPage.PopulateUserFields(
+                    CreateAccountPage.PopulateCustomerFields(
                         UserFirstName,
                         UserLastName,
-                        UserAddressLine1,
-                        UserCity,
-                        UserState,
-                        UserZipCode,
-                        UserMobilePhone);
+                        Data.GetString("customerPassword"));
 
-                    // now that all the fields are populated lets click that register button!
+
+                    CreateAccountPage.PopulateUserFields(
+                        Data.GetString("userFirstName"),
+                        Data.GetString("userLastName"),
+                        Data.GetString("userAddressLine1"),
+                        Data.GetString("userCity"),
+                        Data.GetString("userState"),
+                        Data.GetString("userZipCode"),
+                        Data.GetString("userMobilePhone"));
+
                     var DashboardAccountPage = CreateAccountPage.ClickRegisterButton();
 
                     var result = DashboardAccountPage.CheckUserName();
 
+                    // Verify that the first and last names of the registered user are what we entered
                     Assert.AreEqual(result, UserFirstName + " " + UserLastName,
                         "Incorrect page: The user names were not the same");
                 }
@@ -169,7 +145,7 @@ namespace Trizetto.Onboarding.TestClasses
                 var url = EnvironmentConfiguration.GetValue("URL");
                 var HomePage = new StoreHomePage(driver, url);
 
-                var ProductDressCategoryPage = HomePage.ClickDressesNavigationButton();
+                HomePage.ClickDressesNavigationButton();
 
                 // test that the title of the web pages in the tab header is the same
                 Assert.AreEqual("Dresses - My Store", driver.Title,
@@ -188,7 +164,7 @@ namespace Trizetto.Onboarding.TestClasses
                 var url = EnvironmentConfiguration.GetValue("URL");
                 var HomePage = new StoreHomePage(driver, url);
 
-                var ProductDressCategoryPage = HomePage.HoverClickEveningDressesNavigationButton();
+                HomePage.HoverClickEveningDressesNavigationButton();
 
                 // test that the title of the web pages in the tab header is the same
                 Assert.AreEqual("Evening Dresses - My Store", driver.Title,
@@ -239,38 +215,25 @@ namespace Trizetto.Onboarding.TestClasses
                 RegisterEmailPage.EnterEmail(Email);
                 var CreateAccountPage = RegisterEmailPage.ClickRegisterButton();
 
-                // Now we need to populate all the account fields
-                // The minimum required is these:
-
-                var CustomerFirstName = Data.GetString("customerFirstName");
-                var CustomerLastName = Data.GetString("customerLastName");
-                var CustomerPassword = Data.GetString("customerPassword");
-
-                CreateAccountPage.PopulateCustomerFields(
-                    CustomerFirstName,
-                    CustomerLastName,
-                    CustomerPassword);
-
                 var UserFirstName = Data.GetString("userFirstName");
                 var UserLastName = Data.GetString("userLastName");
-                var UserAddressLine1 = Data.GetString("userAddressLine1");
-                var UserCity = Data.GetString("userCity");
 
-                var UserState = Data.GetString("userState");
-
-                var UserZipCode = Data.GetString("userZipCode");
-                var UserMobilePhone = Data.GetString("userMobilePhone");
-
-                CreateAccountPage.PopulateUserFields(
+                CreateAccountPage.PopulateCustomerFields(
                     UserFirstName,
                     UserLastName,
-                    UserAddressLine1,
-                    UserCity,
-                    UserState,
-                    UserZipCode,
-                    UserMobilePhone);
+                    Data.GetString("customerPassword"));
 
-                var DashboardAccountPage = CreateAccountPage.ClickRegisterButton();
+
+                CreateAccountPage.PopulateUserFields(
+                    Data.GetString("userFirstName"),
+                    Data.GetString("userLastName"),
+                    Data.GetString("userAddressLine1"),
+                    Data.GetString("userCity"),
+                    Data.GetString("userState"),
+                    Data.GetString("userZipCode"),
+                    Data.GetString("userMobilePhone"));
+
+                CreateAccountPage.ClickRegisterButton();
 
                 // finish registering account
 
@@ -283,8 +246,20 @@ namespace Trizetto.Onboarding.TestClasses
                 var DeliveryAddress = ViewCheckoutCart.GetDeliveryAddress().ToString();
                 var InvoiceAddress = ViewCheckoutCart.GetInvoiceAddress().ToString();
 
+                // According to our test cases comparing the delivery address and invoice address will prove this test passed
                 Assert.AreEqual(DeliveryAddress, InvoiceAddress, "The two compared addresses are not equal and the test case fails");
             });
         }
+
+        /// <summary>
+        /// Adds some random 5 character so the beginning of the email to avoid duplication errors during testing
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+        private string AddRandomTextToEmail(string v)
+        {
+            return DataRandomizer.CreateString(CATS.Framework.Helpers.Type.AlphaUpper, 5) + v;
+        }
     }
+
 }

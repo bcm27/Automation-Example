@@ -4,7 +4,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 
-namespace Trizetto.Onboarding.PageObjects.MyAccount
+namespace Project.Automation.PageObjects.MyAccount
 {
     internal class MyAccountPage
     {

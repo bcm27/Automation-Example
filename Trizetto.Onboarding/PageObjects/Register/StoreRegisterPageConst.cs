@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Trizetto.Onboarding.PageObjects.Register
+namespace Project.Automation.PageObjects.Register
 {
     internal static class StoreRegisterPageConst
     {

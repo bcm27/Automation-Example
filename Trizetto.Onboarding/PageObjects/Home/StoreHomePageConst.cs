@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Trizetto.Onboarding.PageObjects.Home
+namespace Project.Automation.PageObjects.Home
 {
     internal static class StoreHomePageConst
     {

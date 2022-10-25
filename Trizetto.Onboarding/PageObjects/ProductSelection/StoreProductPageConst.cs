@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Trizetto.Onboarding.PageObjects.ProductSelection
+namespace Project.Automation.PageObjects.ProductSelection
 {
     internal static class StoreProductPageConst
     {

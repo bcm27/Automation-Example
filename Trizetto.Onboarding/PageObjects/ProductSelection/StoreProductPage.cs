@@ -2,9 +2,9 @@
 using CATS.Framework.Logging;
 using OpenQA.Selenium;
 using System;
-using Trizetto.Onboarding.PageObjects.ProductSelection;
+using Project.Automation.PageObjects.ProductSelection;
 
-namespace Trizetto.Onboarding.PageObjects.Product
+namespace Project.Automation.PageObjects.Product
 {
     internal class StoreProductPage
     {

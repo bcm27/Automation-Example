@@ -3,10 +3,10 @@ using CATS.Framework.Logging;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using Trizetto.Onboarding.PageObjects.Product;
-using Trizetto.Onboarding.PageObjects.SignInRegister;
+using Project.Automation.PageObjects.Product;
+using Project.Automation.PageObjects.SignInRegister;
 
-namespace Trizetto.Onboarding.PageObjects.Home
+namespace Project.Automation.PageObjects.Home
 {
     internal class StoreHomePage
     {

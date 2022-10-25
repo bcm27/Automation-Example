@@ -3,10 +3,10 @@ using CATS.Framework.Logging;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using Trizetto.Onboarding.PageObjects.Register;
-using Trizetto.Onboarding.PageObjects.SignIn;
+using Project.Automation.PageObjects.Register;
+using Project.Automation.PageObjects.SignIn;
 
-namespace Trizetto.Onboarding.PageObjects.SignInRegister
+namespace Project.Automation.PageObjects.SignInRegister
 {
     internal class StoreSignInRegisterPage
     {

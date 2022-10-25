@@ -3,9 +3,9 @@ using CATS.Framework.Logging;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using Trizetto.Onboarding.PageObjects.MyAccount;
+using Project.Automation.PageObjects.MyAccount;
 
-namespace Trizetto.Onboarding.PageObjects.Register
+namespace Project.Automation.PageObjects.Register
 {
     internal class StoreRegisterPage
     {

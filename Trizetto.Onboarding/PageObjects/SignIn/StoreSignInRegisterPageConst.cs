@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Trizetto.Onboarding.PageObjects.SignIn
+namespace Project.Automation.PageObjects.SignIn
 {
     internal static class StoreSignInRegisterPageConst
     {

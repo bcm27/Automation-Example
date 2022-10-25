@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Trizetto.Onboarding.PageObjects.MyAccount
+namespace Project.Automation.PageObjects.MyAccount
 {
     internal static class MyAccountPageConst
     {

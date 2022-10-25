@@ -3,9 +3,9 @@ using CATS.Framework.Logging;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
-using Trizetto.Onboarding.PageObjects.Checkout;
+using Project.Automation.PageObjects.Checkout;
 
-namespace Trizetto.Onboarding.PageObjects
+namespace Project.Automation.PageObjects
 {
     internal class StoreCheckoutPage
     {
