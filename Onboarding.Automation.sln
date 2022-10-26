@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Automation", "Trizetto.Onboarding\Project.Automation.csproj", "{2A6749CC-A94E-439F-995E-DB4776662AAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onboarding.Automation", "Onboarding.Automation\Onboarding.Automation.csproj", "{2A6749CC-A94E-439F-995E-DB4776662AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

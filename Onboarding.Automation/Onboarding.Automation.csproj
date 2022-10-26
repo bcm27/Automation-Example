@@ -9,8 +9,8 @@
     <ProjectGuid>{2A6749CC-A94E-439F-995E-DB4776662AAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Trizetto.Onboarding</RootNamespace>
-    <AssemblyName>Trizetto.Onboarding</AssemblyName>
+    <RootNamespace>Onboarding.Automation</RootNamespace>
+    <AssemblyName>Onboarding.Automation</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
