@@ -1,3 +1,7 @@
 {
-  "URL": "http://automationpractice.com/index.php"
+  // URl for our environment
+  "URL": "http://automationpractice.com/index.php",
+
+  // environment specific user accounts
+  "Bob": "password1234"
 }
